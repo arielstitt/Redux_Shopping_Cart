@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+
+import React, { Component } from 'react'
 
 class Shelf extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            shelfItem: [
+            shelfItems: [
                 "Bananas",
                 "Frozen Pizza",
                 "Flamin' Hot Cheetos",
@@ -12,18 +13,16 @@ class Shelf extends Component {
             ]
         }
     }
+
     render() {
-      const shelfItems = this.state.shelfItems.map( (item, id) => {
-          return (
-              <li key={id}>
-                {item}
-                <button onClick={()=> this.props.addItem(item)}> + </button>
-              </li>
-          )
-      })
-
-
-
+        const shelfItems = this.state.shelfItems.map((item, id) => {
+            return (
+                <li key={id}>
+                    {item}
+                    <button onClick={() => this.props.addItem(item)}>+</button>
+                </li>
+            )
+        })
         return (
             <div>
                 <h2>Store Inventory</h2>
@@ -31,8 +30,44 @@ class Shelf extends Component {
                     {shelfItems}
                 </ul>
             </div>
-        );
+        )
     }
 }
 
-export default Shelf;
+export default Shelf
+
+// import React, { Component } from 'react';
+
+// class Shelf extends Component {
+//     constructor(props) {
+//         super(props)
+//         this.state = {
+//             shelfItem: [
+//                 "Bananas",
+//                 "Frozen Pizza",
+//                 "Flamin' Hot Cheetos",
+//                 "Arugula"
+//             ]
+//         }
+//     }
+//     render() {
+//         const shelfItems = this.state.shelfItems.map( (item, id) => {
+//           return (
+//             <li key={id}>
+//               {item}
+//               <button onClick={() => this.props.addItem(item)}>+</button>
+//             </li>
+//           )
+//         })
+//         return (
+//             <div>
+//                 <h2>Store Inventory</h2>
+//                 <ul>
+//                     {shelfItems}
+//                 </ul>
+//             </div>
+//         );
+//     }
+// }
+
+// export default Shelf;
