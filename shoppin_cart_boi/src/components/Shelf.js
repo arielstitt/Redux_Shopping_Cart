@@ -26,7 +26,10 @@ class Shelf extends Component {
 
         return (
             <div>
-
+                <h2>Store Inventory</h2>
+                <ul>
+                    {shelfItems}
+                </ul>
             </div>
         );
     }
